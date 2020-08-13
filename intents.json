@@ -1,0 +1,36 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+	    "patterns": ["Hi", "Hey", "Hello", "Hola", "Ahlan", "Hi there", "Good Morning", "Good Afternoon", "What's up?", "Wassup"],
+            "responses": ["Hi", "Hey", "Hello", "Hola", "Ahlan", "Hi there"],
+            "set_context": ""
+        },
+        {
+            "tag": "bye",
+	    "patterns": ["bye", "end", "quit", "thank you", "Have a good day", "see you"],
+            "responses": ["bye", "thanks to you", "Have a good day", "see you", "hope I was able to help"],
+            "set_context": ""
+        },
+        {
+            "tag": "help",
+	    "patterns": ["help", "what can you do to me?", "what's on the menu?", "How can you help?", "What do you do?", "usage", "operation", "function"],
+            "responses": ["I can help you sending emails to multiple users listed in a Google Sheet.\nYou will need to provide me with Google Sheet link, and your message body\nFor any column in the sheet I can replace it's value when I found it in the message body in the following format `{Column Name}`"],
+            "set_context": "",
+            "context_filter": ""
+        },
+        {
+            "tag": "sheet_sharing",
+	    "patterns": ["https://docs.google.com/spreadsheets/d"],
+            "responses": ["Do you wanna share this sheet with me to format your messages?"],
+            "set_context": "sheet_formatting"
+        },
+        {
+            "tag": "sheet_confirmation",
+	    "patterns": ["yes", "ya", "OK", "Do it", "Go for it", "yep", "yeah", "sure"],
+            "responses": ["OK, processing your sheet .."],
+            "set_context": "sheet_processing",
+            "context_filter": "sheet_formatting"
+        }
+    ]
+}

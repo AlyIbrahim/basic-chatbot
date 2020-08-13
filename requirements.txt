@@ -1,0 +1,5 @@
+nltk
+numpy
+tflearn
+keras==2.3.1
+tensorflow
